@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Jura', sans-serif;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    margin: 0;
+    color: white;
+    position: absolute;
+    top: 0;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+
+  .middle-box {
+    background: #EBEBEB;
+    border-radius: 25px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+    height: 300px;
+    
+    h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      text-align: left;
+      margin: 1rem 2rem;
+      font-weight: 600;
+    }
+
+    .subinfo {
+      margin: 0;
+    }
+
+    .underline {
+      width: 170px;
+      height: 1px;
+      background-color: black;
+      margin-bottom: 4rem;
+      margin-left: 2rem;
+    }
+
+    .choice-box-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 100px;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .or {
+        margin: 0 5rem;
+        font-weight: bold;
+      }
+
+      .box {
+          position: relative;
+         p {
+          position: absolute;
+          bottom: -50px;
+          left: 0;
+          right: 0;
+         }
+
+         img {
+          transition: all .2s;
+         }
+
+         img:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+         }
+      }
+    }
+
+    .center {
+      text-align: center;
+    }
+  }
+
+  .middle-box.game {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+    height: 450px;
+
+    .score {
+      font-size: 6rem;
+      font-weight: bold;
+    }
+
+    .result {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      .button {
+        transition: all .2s;
+        background: #282c34;
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        font-size: 1.3rem;
+        padding: 1rem 2rem ;
+        width: 200px;
+        margin: 0 1rem;
+      }
+
+      .button.disable {
+        background: #282c349d;
+      }
+
+      .button-restart {
+        transition: all .2s;
+        margin-top: 1rem;
+        background: #019027;
+        border-radius: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding: 1rem 2rem;
+        color: white;
+        font-weight: 600;
+      }
+
+      .button-restart:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .button-quit {
+    transition: all .2s;
+    margin-top: 1rem;
+    background: #BE2C2C;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+    padding: 1rem 2rem;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    bottom: -4.5rem;
+    left: 0;
+  }
+
+  .button-quit:hover, .button:not(.disable):hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.value-input {
+  animation: .5s ease-in 0s 1 fadeFromBottom;
+  font-size: 10rem;
+  color: #4681DA;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin-right: 3rem;
+  margin-top: 5rem;
+}
+
+@keyframes fadeFromBottom {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
