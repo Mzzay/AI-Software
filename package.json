@@ -2,7 +2,7 @@
   "name": "software",
   "version": "0.1.0",
   "private": true,
-  "main": "public/index.js",
+  "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -13,6 +13,7 @@
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
+    "electron-is-dev": "^2.0.0",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,33 +23,34 @@
     "web-vitals": "^2.1.4"
   },
   "build": {
-      "mac": {
-          "publish": {
-              "provider": "github",
-              "owner": "Github Owner",
-              "repo": "Repository Name",
-              "private": true,
-              "token": ""
-          }
-      },
-      "win": {
-          "publish": {
-              "provider": "github",
-              "owner": "Github Owner",
-              "repo": "Repository Name",
-              "private": true,
-              "token": ""
-          }
-      },
-      "files": [
-          "build/**/*",
-          "node_modules/**/*"
-      ],
+    "mac": {
       "publish": {
-          "provider": "github",
-          "private": true,
-          "owner": "Github Owner"
+        "provider": "github",
+        "owner": "Github Owner",
+        "repo": "Repository Name",
+        "private": true,
+        "token": ""
       }
+    },
+    "win": {
+      "publish": {
+        "provider": "github",
+        "owner": "Github Owner",
+        "repo": "Repository Name",
+        "private": true,
+        "token": ""
+      }
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "publish": {
+      "provider": "github",
+      "private": true,
+      "owner": "Github Owner"
+    }
   },
   "scripts": {
     "start": "react-scripts start",
