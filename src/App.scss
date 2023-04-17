@@ -175,6 +175,12 @@ body {
 }
 
 .value-input {
+
+  span {
+    font-size: 3.5rem;
+    margin: 0;
+  }
+
   animation: .5s ease-in 0s 1 fadeFromBottom;
   font-size: 10rem;
   color: #4681DA;
@@ -183,7 +189,18 @@ body {
   bottom: 0;
   top: 0;
   margin-right: 3rem;
-  margin-top: 5rem;
+  margin-top: 0;
+}
+
+.value-input.you {
+  color: blue;
+  left: 0;
+  right: auto;
+  margin-left: 3rem;
+}
+
+.value-input.ai {
+  color: red;
 }
 
 @keyframes fadeFromBottom {

@@ -43,8 +43,8 @@ const GameScreen = () => {
         setScore(game?.currentNode.score)
     }
 
-    const play = (decreasePoint: number, player: PlayerType) => {
-        if (!game || !(DECREASE_LIST.includes(decreasePoint) || decreasePoint === 0))
+    const play = (decreasePoint: number, player: PlayerType, disable?: boolean) => {
+        if (disable || !game || !(DECREASE_LIST.includes(decreasePoint) || decreasePoint === 0))
             return;
 
         setDisableBtn(true);
@@ -69,6 +69,8 @@ const GameScreen = () => {
                 play(0, PlayerType.COMPUTER);
                 setDisableBtn(false);
             }, 1500)
+        }else{
+            setDisableBtn(false);
         }
     }
 
@@ -87,8 +89,9 @@ const GameScreen = () => {
                     {
                         canPlay ? 
                             DECREASE_LIST.map((decNumber: number) => {
+                                let disable = disableBtn || (decNumber > score);
                                 return (
-                                    <div key={decNumber} className={`button ${disableBtn ? 'disable' : ''}`} onClick={() => play(decNumber, PlayerType.USER)}>
+                                    <div key={decNumber} className={`button ${disable ? 'disable' : ''}`} onClick={() => play(decNumber, PlayerType.USER, disable)}>
                                         -{decNumber}
                                     </div>
                                 )
@@ -100,7 +103,7 @@ const GameScreen = () => {
                     }
                 </div>
                 {
-                    lastInput && <div className="value-input">-{lastInput}</div>
+                    lastInput && <div className={`value-input ${lastPlayer === 0 ? 'ai' : 'you'}`}><span>{lastPlayer === 0 ? 'AI' : 'You'}<br/></span>-{lastInput}</div>
                 }
                 {
                     canPlay && (<div className="button-quit" onClick={() => navigate('/')}>
