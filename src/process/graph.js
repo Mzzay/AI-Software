@@ -6,11 +6,7 @@ class GraphNode {
         this.level = level;
         this.heuristicValue = heuristicValue;
     }
-
-    getChildren() {
-        return this.children;
-    }
-
+    
     expand(decreaseList) { 
         if (this.score < Math.min(...decreaseList))
             return; 
