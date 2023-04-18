@@ -7,7 +7,7 @@ const GameScreen = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const [ START_NUMBER, _ ] = useState<number>(Math.floor(Math.random() * (50 - 20) + 20))
+    const [ START_NUMBER, _ ] = useState<number>(Math.floor(Math.random() * (35 - 20) + 20))
     const [ score, setScore ] = useState<number>(START_NUMBER);
     const [ game, setGame ] = useState<Game>();
     const [ firstMove, setFirstMove ] = useState<boolean>(true);
@@ -19,7 +19,7 @@ const GameScreen = () => {
 
     const [ disableBtn, setDisableBtn ] = useState<boolean>(false);
 
-    const DECREASE_LIST = [2, 3 ]
+    const DECREASE_LIST = [3, 4, 7]
     useEffect(() => {
         if (!(location.state.firstPlayer !== undefined)) {
             navigate("/");
