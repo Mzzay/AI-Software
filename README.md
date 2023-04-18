@@ -9,7 +9,7 @@ You must have following dependencies on your computer:
 
 Once you have Node JS installed, you can run the following command to download all necessary packages.
 ```
-npm i 
+npm i electron-builder
 ```
 
 ## Compilation: Windows only
